@@ -1,5 +1,6 @@
 {
   allPosts(
+    filter: {isPublished: true},
     orderBy: createdAt_ASC
   ) {
     id,

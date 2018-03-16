@@ -1,7 +1,4 @@
 <template>
-  <!-- <h2 v-if="loading > 0">
-    Loading...
-  </h2> -->
   <div v-if="!loading > 0">
     <article>
       <div class="article-header">
