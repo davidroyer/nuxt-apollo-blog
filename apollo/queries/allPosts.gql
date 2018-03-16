@@ -1,0 +1,10 @@
+{
+  allPosts(
+    orderBy: createdAt_ASC
+  ) {
+    id,
+    title,
+    slug,
+    tags
+  }
+}

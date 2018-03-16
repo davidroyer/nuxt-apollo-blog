@@ -2,14 +2,14 @@
 # yarn lockfile v1
 
 
-"@nuxtjs/apollo@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-3.0.0.tgz#6045ba632df2fc937acf4ceb80893ed5b9109930"
+"@nuxtjs/apollo@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-3.0.5.tgz#c0f86a1862be235eab8ec1e0ee169425156c0518"
   dependencies:
-    apollo-cache-inmemory "^1.0.0"
-    apollo-client "^2.0.1"
+    apollo-cache-inmemory "^1.1.10"
+    apollo-client "^2.2.6"
     isomorphic-fetch "^2.2.1"
-    vue-apollo "^3.0.0-alpha.1"
+    vue-apollo "^3.0.0-beta.5"
 
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"
@@ -19,9 +19,9 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@types/async@2.0.45":
-  version "2.0.45"
-  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.45.tgz#0cfe971d7ed5542695740338e0455c91078a0e83"
+"@types/async@2.0.47":
+  version "2.0.47"
+  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.47.tgz#f49ba1dd1f189486beb6e1d070a850f6ab4bd521"
 
 "@types/zen-observable@0.5.3", "@types/zen-observable@^0.5.3":
   version "0.5.3"
@@ -160,7 +160,7 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@^1.0.0, apollo-cache-inmemory@^1.1.1:
+apollo-cache-inmemory@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.1.1.tgz#1511f00eb845da88504abf867f408c3026a909ba"
   dependencies:
@@ -168,25 +168,39 @@ apollo-cache-inmemory@^1.0.0, apollo-cache-inmemory@^1.1.1:
     apollo-utilities "^1.0.2"
     graphql-anywhere "^4.0.1"
 
+apollo-cache-inmemory@^1.1.10:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.1.11.tgz#2a96ad076f40575d622c4a45b1eeced18b2dc8ec"
+  dependencies:
+    apollo-cache "^1.1.6"
+    apollo-utilities "^1.0.10"
+    graphql-anywhere "^4.1.7"
+
 apollo-cache@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.0.1.tgz#66c16141173bc752d3ad3dce990310c10dfc4076"
   dependencies:
     apollo-utilities "^1.0.2"
 
-apollo-client@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.0.3.tgz#f99f32e2c851bbd52da1e1b113ce8f6a0cf94945"
+apollo-cache@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.6.tgz#b953488bcc8244e001b9ab9c8b362a1512e9203f"
+  dependencies:
+    apollo-utilities "^1.0.10"
+
+apollo-client@^2.2.6:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.2.7.tgz#d5adbda81ef1f1c9c105ac71227ca8dc42b5731b"
   dependencies:
     "@types/zen-observable" "^0.5.3"
-    apollo-cache "^1.0.1"
+    apollo-cache "^1.1.6"
     apollo-link "^1.0.0"
     apollo-link-dedup "^1.0.0"
-    apollo-utilities "^1.0.2"
+    apollo-utilities "^1.0.10"
     symbol-observable "^1.0.2"
-    zen-observable "^0.6.0"
+    zen-observable "^0.7.0"
   optionalDependencies:
-    "@types/async" "2.0.45"
+    "@types/async" "2.0.47"
 
 apollo-fetch@^0.7.0:
   version "0.7.0"
@@ -213,6 +227,10 @@ apollo-link@^1.0.0, apollo-link@^1.0.3:
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.2.tgz#bcf348a7e613e82e2624ddb5be2b9f6bf1259c6d"
+
+apollo-utilities@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.10.tgz#0c35696891d4fa28d76768e0f7249d63c6da08b9"
 
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
@@ -2820,6 +2838,12 @@ graphql-anywhere@^4.0.1:
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.0.1.tgz#eb53ed5c56ef42e21d34dc22951e3da38f88a342"
   dependencies:
     apollo-utilities "^1.0.2"
+
+graphql-anywhere@^4.1.7:
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.7.tgz#cbb9106905bcc25bc0e8390548a97f8b154d3f9b"
+  dependencies:
+    apollo-utilities "^1.0.10"
 
 graphql-tag@^2.5.0:
   version "2.5.0"
@@ -6400,9 +6424,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-apollo@^3.0.0-alpha.1:
-  version "3.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-alpha.2.tgz#7456ac833a9c0e8fde8c7b76fcc1da20b09e7192"
+vue-apollo@^3.0.0-beta.5:
+  version "3.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.5.tgz#d0aabd19683e50cd1ab2d24e2827e8fb579ff78e"
   dependencies:
     lodash.debounce "^4.0.8"
     lodash.omit "^4.5.0"
@@ -6721,3 +6745,7 @@ yargs@~3.10.0:
 zen-observable@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.6.0.tgz#8a6157ed15348d185d948cfc4a59d90a2c0f70ee"
+
+zen-observable@^0.7.0:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.7.1.tgz#f84075c0ee085594d3566e1d6454207f126411b3"

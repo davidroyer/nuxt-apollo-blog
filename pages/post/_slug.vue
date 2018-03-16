@@ -1,8 +1,8 @@
 <template>
-  <h2 v-if="loading > 0">
+  <!-- <h2 v-if="loading > 0">
     Loading...
-  </h2>
-  <div v-else>
+  </h2> -->
+  <div v-if="!loading > 0">
     <article>
       <div class="article-header">
         <h1>{{post.title}}</h1>
@@ -14,34 +14,14 @@
       </div>
 
       <PostContent :markdown="post.content"/>
+      <!-- <div v-html="post.contentHtml"></div> -->
     </article>
   </div>
 </template>
 
 <script>
-  import gql from 'graphql-tag'
+  import post from '~/apollo/queries/post'
   import PostContent from '@/components/PostContent'
-
-  const post = gql`
-    query post($slug: String!) {
-      post: Post(slug: $slug) {
-        id,
-        title,
-        slug,
-        content,
-        tags,
-        authors {
-          id,
-          name,
-          avatar {
-            id,
-            handle,
-            url
-          }
-        }
-      }
-    }
-  `
 
   export default {
     name: 'PostPage',
@@ -53,10 +33,9 @@
       $loadingKey: 'loading',
       post: {
         query: post,
-        variables () {
-          return {
-            slug: this.$route.params.slug
-          }
+        prefetch: ({ route }) => ({ slug: route.params.slug }),
+        variables() {
+          return { slug: this.$route.params.slug }
         }
       }
     },

@@ -5,7 +5,7 @@
   "author": "hmeissner <hugomeissner@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt -p 3002",
     "build": "nuxt build",
     "start": "nuxt start",
     "deploy:now": "now --public && now alias",
@@ -15,7 +15,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/apollo": "^3.0.0",
+    "@nuxtjs/apollo": "^3.0.5",
     "apollo-cache-inmemory": "^1.1.1",
     "apollo-fetch": "^0.7.0",
     "apollo-link": "^1.0.3",

@@ -75,15 +75,21 @@ module.exports = {
   },
 
   generate: {
-    routes: function() {
-      return fetch({
-        query
-      }).then(res => {
-        console.log(res.data.allPosts);
-        return res.data.allPosts.map((post) => {
-          return '/post/' + post.slug
-        })
-      });
+    routes: async function() {
+      const {data} = await fetch({query})
+      return data.allPosts.map((post) => {
+        return '/post/' + post.slug
+      })
+
+
+      // return fetch({
+      //   query
+      // }).then(res => {
+      //   console.log(res.data.allPosts);
+      //   return res.data.allPosts.map((post) => {
+      //     return '/post/' + post.slug
+      //   })
+      // });
     }
   }
 }
