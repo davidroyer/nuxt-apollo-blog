@@ -66,7 +66,10 @@ module.exports = {
     '@/assets/styles/main.css'
   ],
 
-  modules: ['@nuxtjs/apollo'],
+  modules: [
+    '@nuxtjs/apollo',
+    ['@nuxtjs/pwa', { icon: false }],
+  ],
 
   apollo: {
     clientConfigs: {
