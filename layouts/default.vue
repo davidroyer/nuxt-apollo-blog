@@ -23,6 +23,13 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  body * {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  pre {
+    overflow-x: auto;
+  }
   main {
     max-width: 650px;
     margin: 32px auto;
@@ -34,6 +41,6 @@
   }
   article {
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 650px !important;
   }
 </style>

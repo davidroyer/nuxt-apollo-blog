@@ -71,6 +71,7 @@ module.exports = {
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
+      // default: '~/apollo/client-configs/default2.js'
     }
   },
 
