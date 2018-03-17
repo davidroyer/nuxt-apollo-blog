@@ -7,7 +7,7 @@ import Highlight from 'highlight.js/lib/highlight.js'
 
 import highlightCSS from 'highlight.js/lib/languages/css.js';
 import highlightJS from 'highlight.js/lib/languages/javascript.js';
-
+// import 'highlight.js/lib/styles/atom-one-dark.css'
 Highlight.registerLanguage('css', highlightCSS);
 Highlight.registerLanguage('javascript', highlightJS);
 
@@ -31,3 +31,5 @@ export default {
   }
 }
 </script>
+
+<style></style>

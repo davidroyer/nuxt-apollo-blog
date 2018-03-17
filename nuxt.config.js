@@ -43,7 +43,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css' },
-      // { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' }
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' },
     ],
     script: [
       // { src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js' }
@@ -63,7 +63,8 @@ module.exports = {
   },
 
   css: [
-    '@/assets/styles/main.css'
+    '@/assets/styles/main.css',
+    // {src: '@/node_modules/highlight.js/lib/styles/atom-one-dark.css'},
   ],
 
   modules: [
@@ -77,7 +78,6 @@ module.exports = {
       // default: '~/apollo/client-configs/default2.js'
     }
   },
-
   generate: {
     fallback: true,
     routes: async function() {
