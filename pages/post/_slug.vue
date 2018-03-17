@@ -17,31 +17,28 @@
 </template>
 
 <script>
+  import allPosts from '~/apollo/queries/allPosts'
   import post from '~/apollo/queries/post'
   import PostContent from '@/components/PostContent'
 
   export default {
     name: 'PostPage',
     components: { PostContent },
-    asyncData({params, payload, error, app}) {
-      if (payload) return { post: payload, skipQuery: true }
-      else return { skipQuery: false }
+    async asyncData({params, payload, error, app}) {
+
+      if (payload) return { post: payload }
+      else {
+        let {data} = await app.apolloProvider.defaultClient.query(
+          { query: post, prefetch: true, variables: {slug: params.slug} }
+        )
+        return { post: data.post }
+      }
     },
     data: () => ({
       loading: 0
     }),
     apollo: {
       $loadingKey: 'loading',
-      post: {
-        query: post,
-        prefetch: ({ route }) => ({ slug: route.params.slug }),
-        variables() {
-          return { slug: this.$route.params.slug }
-        },
-        skip() {
-          return this.skipQuery
-        }
-      }
     },
     computed: {
       authorAvatar() {
