@@ -83,7 +83,10 @@ module.exports = {
     routes: async function() {
       const {data} = await fetch({query})
       return data.allPosts.map((post) => {
-        return '/post/' + post.slug
+        return {
+          route: '/post/' + post.slug,
+          payload: post
+        }
       })
     }
   }

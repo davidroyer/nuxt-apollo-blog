@@ -23,6 +23,10 @@
   export default {
     name: 'PostPage',
     components: { PostContent },
+    asyncData({params, payload, error, app}) {
+      if (payload) return { post: payload, skipQuery: true }
+      else return { skipQuery: false }
+    },
     data: () => ({
       loading: 0
     }),
@@ -33,6 +37,9 @@
         prefetch: ({ route }) => ({ slug: route.params.slug }),
         variables() {
           return { slug: this.$route.params.slug }
+        },
+        skip() {
+          return this.skipQuery
         }
       }
     },
