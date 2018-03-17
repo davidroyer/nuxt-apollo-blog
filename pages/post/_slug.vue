@@ -45,7 +45,7 @@
         let baseAssetUrl = 'https://media.graphcms.com/'
         // let handle = this.post.authors[0].avatar.handle
         let transformation = 'resize=w:150/'
-        console.log(handle);
+        // console.log(handle);
         return baseAssetUrl + transformation + '3TV6ubWpTiSd4yuv9xo5'
         // return `${baseAssetUrl/handle}`
       }
