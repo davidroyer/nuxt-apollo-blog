@@ -7,7 +7,9 @@ const fetch = createApolloFetch({
 
 const query = `
   query AllPosts {
-    allPosts {
+    allPosts(
+      filter: {isPublished: true}
+    ) {
       id,
       title,
       slug,
@@ -15,8 +17,11 @@ const query = `
       tags,
       authors {
         id,
+        name,
         avatar {
-          id
+          id,
+          handle,
+          url
         }
       }
     }
@@ -41,9 +46,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Roboto' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' },
+      { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ],
     script: [
       // { src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js' }
@@ -70,8 +73,11 @@ module.exports = {
   modules: [
     '@nuxtjs/apollo',
     ['@nuxtjs/pwa', { icon: false }],
+    '@nuxtjs/markdownit'
   ],
-
+  markdownit: {
+    injected: true
+  },
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'

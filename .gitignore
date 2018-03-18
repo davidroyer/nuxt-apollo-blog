@@ -9,3 +9,5 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+apollo/default2.js

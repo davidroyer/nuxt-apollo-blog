@@ -23,6 +23,18 @@
 
   export default {
     name: 'PostPage',
+    head () {
+      return {
+        title: this.post.title,
+        link: [
+          { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css' },
+          { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' }
+        ],
+        meta: [
+          { hid: 'description', name: 'description', content: 'My custom description' }
+        ]
+      }
+    },
     components: { PostContent },
     async asyncData({params, payload, error, app}) {
 
@@ -43,10 +55,10 @@
     computed: {
       authorAvatar() {
         let baseAssetUrl = 'https://media.graphcms.com/'
-        // let handle = this.post.authors[0].avatar.handle
+        let handle = this.post.authors[0].avatar.handle
         let transformation = 'resize=w:150/'
         // console.log(handle);
-        return baseAssetUrl + transformation + '3TV6ubWpTiSd4yuv9xo5'
+        return baseAssetUrl + transformation + handle
         // return `${baseAssetUrl/handle}`
       }
     }
