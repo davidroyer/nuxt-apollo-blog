@@ -1,8 +1,5 @@
 <template>
-  <!-- <div v-html="content"></div> -->
   <div v-html="$md.render(markdown)"></div>
-
-
 </template>
 <script>
 import Highlight from 'highlight.js/lib/highlight.js'
@@ -26,5 +23,3 @@ export default {
   }
 }
 </script>
-
-<style></style>

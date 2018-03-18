@@ -67,7 +67,6 @@ module.exports = {
 
   css: [
     '@/assets/styles/main.css',
-    // {src: '@/node_modules/highlight.js/lib/styles/atom-one-dark.css'},
   ],
 
   modules: [
