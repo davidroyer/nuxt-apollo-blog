@@ -2,7 +2,7 @@
   <section v-if="!loading > 0">
     <h1>New Update</h1>
     <ul>
-      <li v-for="post in allPosts" :key="post.id">
+      <li v-for="post in posts" :key="post.id">
         <router-link :to="`/post/${post.slug}`" class='link'>
           <h3>{{post.title}}</h3>
         </router-link>
@@ -16,15 +16,21 @@
 
   export default {
     name: 'HomePage',
+    async asyncData({params, payload, error, app}) {
+
+      if (payload) return { allPosts: payload }
+      else {
+        let {data} = await app.apolloProvider.defaultClient.query(
+          { query: allPosts, prefetch: true }
+        )
+        return { posts: data.allPosts }
+      }
+    },
     data: () => ({
       loading: 0
     }),
     apollo: {
-      $loadingKey: 'loading',
-      allPosts: {
-        prefetch: true,
-        query: allPosts
-      }
+      $loadingKey: 'loading'
     }
   }
 </script>

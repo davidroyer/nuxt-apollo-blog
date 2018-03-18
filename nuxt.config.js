@@ -76,6 +76,9 @@ module.exports = {
     '@nuxtjs/markdownit'
   ],
   markdownit: {
+    html: true,
+    linkify: true,
+    typographer: true,
     injected: true
   },
   apollo: {

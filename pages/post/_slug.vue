@@ -11,13 +11,12 @@
       </div>
 
       <PostContent :markdown="post.content"/>
-      <!-- <div v-html="post.contentHtml"></div> -->
+
     </article>
   </div>
 </template>
 
 <script>
-  import allPosts from '~/apollo/queries/allPosts'
   import post from '~/apollo/queries/post'
   import PostContent from '@/components/PostContent'
 
@@ -54,12 +53,11 @@
     },
     computed: {
       authorAvatar() {
-        let baseAssetUrl = 'https://media.graphcms.com/'
+        let baseAssetUrl = 'https://media.graphcms.com'
         let handle = this.post.authors[0].avatar.handle
-        let transformation = 'resize=w:150/'
-        // console.log(handle);
-        return baseAssetUrl + transformation + handle
-        // return `${baseAssetUrl/handle}`
+        let transformation = 'resize=w:150'
+        // return baseAssetUrl + transformation + handle
+        return `${baseAssetUrl}/${transformation}/${handle}`
       }
     }
   }
